@@ -16,3 +16,8 @@ if the tanks are empty, they will start filling to their **pre-configure setpoin
 
 ### Product weighing management
 As the product is extracted from the tanks, it is being weighed by an industrial scale. When the scale sensor starts measuring each product separately and the measure increases, each proportional valve closes following an **"inverse proportional mode"**. Once all the products have been measured and all the valves are closed, the scale discharge valve will open letting the fluid pass and start filling the container. At the same time, a command will be sent to the "conveyor station" to start operating the motor using a **Star-Delta Starter**.
+### Conveyor belt manangement
+The conveyor belt will be active from the first time it recives the activation command until the mixer tank is filled with all the product. If at any point of the process the motor **overload is triggered** or any **safety measures** need to be put in place, the conveyor belt will be automatically stopped. 
+
+### Mixer tank management
+This station is the last, when all the product has been brought from the tank through the conveyor belt and the mixer tank low level limit sensor has been reached. The sensor sends a command to the motor through the frequency driver to start blending the products. At the same time, a command is sent to the caffeine and sirupe proportional valves to start inyecting product to the mixer tank following the recipe specifications. Once the specific blending time has passed, the proportional valves will close, the discharge valve of the mixer tank will open. The mixer will remain active (mixing product) until the level of the tank is equal or below the low limit, at that time, a command will be sent to the frequency driver to stop it.
