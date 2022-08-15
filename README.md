@@ -1,7 +1,7 @@
 # PLC_Tia_Portal_Energy_Drink
 Program designed to control an energy drink plant with modular programming in Awl, Scl and Fbd.
 ## Project Description
-This project has been created to simulate the production plant of an energy drink.
+This project has been created to simulate the production plant of an energy drink. It is an ongoing project which needs some modifications and implementations to make it more efficient, roboust and error proof.
 
 The process consist of **three main tanks**, containing water, flavours and other conservants. Every individual tank has been implemented with a common "**FC_Tank_Level**" with a **filling** (open-close) **valve** and **discharge** (proportional) **valve** , which are in charge of filling and emptying the tanks independently of each other, depending on the level of the tank and the system`s demands.
 
@@ -20,4 +20,6 @@ As the product is extracted from the tanks, it is being weighed by an industrial
 The conveyor belt will be active from the first time it recives the activation command until the mixer tank is filled with all the product. If at any point of the process the motor **overload is triggered** or any **safety measures** need to be put in place, the conveyor belt will be automatically stopped. 
 
 ### Mixer tank management
-This station is the last, when all the product has been brought from the tank through the conveyor belt and the mixer tank low level limit sensor has been reached. The sensor sends a command to the motor through the frequency driver to start blending the products. At the same time, a command is sent to the caffeine and sirupe proportional valves to start inyecting product to the mixer tank following the recipe specifications. Once the specific blending time has passed, the proportional valves will close, the discharge valve of the mixer tank will open. The mixer will remain active (mixing product) until the level of the tank is equal or below the low limit, at that time, a command will be sent to the frequency driver to stop it.
+This station is the last. When all the product has been brought from the tank through the conveyor belt and the mixer tank low level limit sensor has been reached. The sensor **sends a command** to the motor through the **frequency driver** to start blending the products. At the same time, a command is sent to the **caffeine and sirupe proportional valves** to start inyecting product to the mixer tank following the recipe specifications.
+
+Once the specific blending time has passed, the proportional valves will close and the discharge valve of the mixer tank will open. The mixer will remain active (mixing product) until the level of the tank is equal or below the low limit. At that time, a command will be sent to the frequency driver to stop it. When all the product has left the tank the discharge valve will close and the plant will be ready for another batch of the same recipe or a cleaning process before another recipe is uploaded.
