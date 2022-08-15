@@ -15,3 +15,4 @@ if the tanks are empty, they will start filling to their **pre-configure setpoin
 **Discharge valves** are commanded by the **demands** of the system at that point in time and the **level** of every tank. If the level is **too low** the proportional valve will close. On the other hand, if the level is **whithin parameters**, the valve will open proportionally to the actual demand.
 
 ### Product weighing management
+As the product is extracted from the tanks, it is being weighed by an industrial scale. When the scale sensor starts measuring each product separately and the measure increases, each proportional valve closes following an **"inverse proportional mode"**. Once all the products have been measured and all the valves are closed, the scale discharge valve will open letting the fluid pass and start filling the container. At the same time, a command will be sent to the "conveyor station" to start operating the motor using a **Star-Delta Starter**.
