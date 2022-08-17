@@ -1,4 +1,4 @@
-# PLC_Tia_Portal_Energy_Drink
+# Tia_Portal_Energy_Drink
 Program designed to control an energy drink plant with **modular programming** in **Awl**, **Scl** and **Fbd**.
 ## Project Description
 This project has been created to simulate the production plant of an energy drink. It is an ongoing project which needs some modifications and implementations to make it more efficient, roboust and error proof.
